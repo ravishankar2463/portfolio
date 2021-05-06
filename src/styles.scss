@@ -1,1 +1,59 @@
 /* You can add global styles to this file, and also import other style files */
+@import './animations.scss';
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    /* This defines what 1rem is */
+    font-size: 62.5%;  /* 1 rem = 10px; 10px/16px = 62.5% */ 
+    
+}
+
+body {
+    box-sizing: border-box;
+}
+
+
+
+
+
+.cursor {
+    pointer-events: none;
+}
+
+.cursor__ball {
+    position: fixed;
+    top: 0;
+    left: 0;
+    mix-blend-mode: difference;
+    z-index: 1000;
+}
+
+.cursor__ball circle {
+    // fill: #f7f8fa;
+    fill: #ffffff;
+}
+
+
+@media (max-width: 640px) {
+  .cursor {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+
+.rounded-big{
+    border-radius: 1.3rem;
+}

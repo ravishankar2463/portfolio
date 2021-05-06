@@ -6,8 +6,26 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <script 
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js">
+  </script>
 </head>
-<body>
+<body style="cursor: none;">
+  <div class="cursor">
+    <div class="cursor__ball cursor__ball--big ">
+        <svg height="30" width="30">
+            <circle cx="15" cy="15" r="12" stroke-width="0"></circle>
+        </svg>
+    </div>
+  
+    <div class="cursor__ball cursor__ball--small">
+        <svg height="10" width="10">
+            <circle cx="5" cy="5" r="4" stroke-width="0"></circle>
+        </svg>
+    </div>
+  </div>
+    
   <app-root></app-root>
 </body>
 </html>

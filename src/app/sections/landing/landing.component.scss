@@ -1,0 +1,194 @@
+.arrow {
+    width: 2em;
+    height: 2em;
+    border-right: 3.5px solid black;
+    border-bottom: 3.5px solid black;
+    display: inline-block;
+    transition: transform .2s ease-in-out;
+}
+
+.down {
+    transform: rotate(45deg);
+}
+
+.down:hover{
+    transform: scale(1.1) rotate(45deg);
+}
+
+
+#landing {
+    position: relative;
+    font-size: 1.3rem;
+    width: auto;
+    height: 100vh;
+}
+
+#landing a{
+    text-decoration: none;
+    cursor: none;
+}
+
+
+#landing::after{
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: -3;
+    position: absolute;
+    content: '';
+    background-image: url("../../../assets/geometric-leaves.png");
+    background-color: rgb(161, 255, 206,0.4);
+    background-blend-mode: multiply;
+    opacity: 0.5;
+}
+
+#landing #arrow{
+    position: absolute;
+    top: 90%;
+    left: 47%;
+    width: 4em;
+    height: 4em;
+}
+
+#landing .content{
+    width: 88ch;
+    box-shadow: 5px 10px 18px #888888;
+    transform: skewX(1deg) rotate(-0.5deg);
+    animation: fade-in 2s ease;
+    transition: transform 0.2s linear;
+}
+
+#landing .content:hover{
+    transform: skewX(1deg) rotate(-1.5deg) scale(1.1);
+}
+
+#landing .content h1{
+    font-size: 5.5em;
+    align-self: start;
+}
+
+
+#landing .content p{
+    font-size: 2.5em;
+}
+
+#landing .animation{
+    --anim: all 0.2s ease-in-out;
+    position: relative;
+    width: 50%;
+    height: auto;
+    margin-bottom: 5em;
+    transform: rotate(2deg);
+    transition: transform 0.2s linear;
+}
+
+#landing .animation:hover{
+    transform: scale(1.1);
+}
+
+#landing .animation::after{
+    position: absolute;
+    content: '';
+    width: 130%;
+    height: 150%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) skewY(-3deg);
+    border-radius: 10%;
+    background-color: rgb(98 210 206 / 22%);
+    z-index: -1;
+    box-shadow: 10px 7px 12px #888888;
+    transition: var(--anim);
+}
+
+#landing .animation::before{
+    position: absolute;
+    content: '';
+    width: 130%;
+    height: 150%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) skewY(3deg) skewX(3deg);
+    border-radius: 10%;
+    background-color: rgb(195 60 18 / 22%);
+    z-index: -2;
+    box-shadow: -3px -7px 12px #888888;
+    transition: var(--anim);
+}
+
+#landing .animation:hover:after{
+    transform: translate(-50%,-50%) skewY(3deg);
+    box-shadow: -3px -7px 12px #888888;
+    z-index: -2;
+}
+
+#landing .animation:hover::before{
+    transform: translate(-50%,-50%) skewY(-3deg);
+    box-shadow: 10px 7px 12px #888888;
+    z-index: -1;
+}
+
+@media (max-width: 1024px) {
+    #landing .content{
+        margin: 0.5em 0 4.3em 1em;
+        text-align: justify;
+    }
+}
+
+
+@media (max-width: 768px) {
+    #landing{
+        width: auto;
+        height: auto;
+    }
+
+    #landing .content{
+        margin: 0.5em 0 4.3em 0;
+        text-align: justify;
+    }
+
+    #landing .content h1{
+        text-align: center;
+        font-size: 2.5em;
+    }
+
+    #landing .content p{
+        font-size: 1.5em;
+        padding: 0 1em;
+    }
+
+    #landing #arrow{
+        left: auto;
+        top: 93%;
+        width: 2em;
+        height: 2em;
+    }
+
+    #landing .animation{
+        width: 35%;
+        margin: 3.1em auto 5em auto;
+    }
+
+    #landing .animation::after{
+        width: 120%;
+        height: 130%;
+    }
+}
+
+@media (max-width: 640px) {
+    #landing .animation{
+        width: 60%;
+        margin: 5.4em auto 5em auto;
+    }
+
+    #landing .animation::after{
+        width: 110%;
+        height: 120%;
+    }
+
+    #landing .animation::before{
+        width: 110%;
+        height: 120%;
+    }
+}

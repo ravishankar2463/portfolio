@@ -28,9 +28,12 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/mdb-ui-kit/css/mdb.min.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/custom.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -92,9 +95,12 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/mdb-ui-kit/css/mdb.min.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/custom.js"
+            ]
           }
         },
         "lint": {
