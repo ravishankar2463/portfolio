@@ -3,20 +3,25 @@
     <div class="container-fluid">
         <div class="row d-flex align-items-center justify-content-between">
             <div class="col-12 col-md-6 d-flex justify-content-center mb-5 order-1 order-md-0">
-                <div class="content bg-white rounded-big p-5 text-md-center">
+                <div class="content bg-white rounded-big p-5 text-center">
                     <h1>Welcome</h1>
                     <p class="text-muted mt-4">
                         You have landed on the portfolio of <span class="d-block">Ravi Shankar</span> 
                     </p>
+                    <div class="hoverable">
+                        <a class="btn btn-primary btn-xl"  href="#contact" role="button">
+                            <i class="fa fa-address-card me-3" aria-hidden="true"></i>Contact Me
+                        </a>    
+                    </div>
                 </div>
             </div>
 
             <div class="col-12 col-md-6 d-flex justify-content-center order-0 order-md-1">
-                <div class="animation ml-5">
-                    <ng-lottie [options]="options" (animationCreated)="animationCreated($event)"></ng-lottie>
+                <div class="animation ml-5 hoverable">
+                    <ng-lottie [options]="options"></ng-lottie>
                 </div>
 
-                <a id="arrow" href="#about" class="arrow down">
+                <a id="arrow" href="#about" class="arrow down hoverable">
                 </a>
             </div>
         </div>   

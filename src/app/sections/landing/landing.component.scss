@@ -155,7 +155,7 @@
 
     #landing .content p{
         font-size: 1.5em;
-        padding: 0 1em;
+        padding: 0 0.5em;
     }
 
     #landing #arrow{
@@ -180,6 +180,7 @@
     #landing .animation{
         width: 60%;
         margin: 5.4em auto 5em auto;
+        transform: rotate(0deg);
     }
 
     #landing .animation::after{

@@ -1,6 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 @import './animations.scss';
 
+
+
+
+//*Css Resets
 *,
 *::after,
 *::before {
@@ -22,7 +26,7 @@ body {
 
 
 
-
+//*custom cursor
 .cursor {
     pointer-events: none;
 }
@@ -32,12 +36,16 @@ body {
     top: 0;
     left: 0;
     mix-blend-mode: difference;
-    z-index: 1000;
+    z-index: 1021;
 }
 
 .cursor__ball circle {
-    // fill: #f7f8fa;
-    fill: #ffffff;
+    fill: #f7f8fa;
+    // fill: rgba(92, 92, 92, 0.87);
+}
+
+body{
+    cursor: none;
 }
 
 
@@ -53,7 +61,25 @@ body {
 
 
 
-
+//*utility classes
 .rounded-big{
     border-radius: 1.3rem;
+}
+
+
+
+
+
+.btn-xl {
+    padding: 0.8em 1em;
+    font-size: 1.5em;
+    border-radius: 0.8em;
+}
+
+@media (max-width: 640px) {
+    .btn-xl {
+        padding: 0.6em 1em;
+        font-size: 1em;
+        border-radius: 1em;
+    }
 }
