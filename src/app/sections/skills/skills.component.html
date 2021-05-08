@@ -1,7 +1,7 @@
 <section id="skills">
     <div class="row d-flex justify-content-center mt-5 heading">
       <div class="col-8 d-flex justify-content-center">
-        <p class="text-white text-uppercase">Some Technologies that I Am familiar with</p>
+        <p class="text-white text-uppercase hoverable">Some Technologies that I Am familiar with</p>
       </div>
     </div>
   
@@ -11,7 +11,7 @@
         <div [fxFlex]="(100/gridColumns) + '%'" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let skill of skillsArray; index as i;">
     
           <div class="container d-flex justify-content-center my-5">
-            <div class="card card-{{i}}">
+            <div class="card card-{{i}} hoverable">
               <img
                 src="./../assets/images/{{skill.title.toLowerCase()}}.png"
                 class="card-img-top mt-3"
@@ -29,7 +29,7 @@
       </div>
   
       <div class="row d-flex justify-content-center" id="magic">
-        <div class="col-3 d-flex justify-content-center">
+        <div class="col-3 d-flex justify-content-center hoverable">
           <button class="btn btn-primary py-3" (click)="shuffle()">Click Here To See Some Magic</button>
         </div>
       </div>

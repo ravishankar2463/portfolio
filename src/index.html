@@ -17,8 +17,36 @@
   <style id="global-styles"></style>
 </head>
 <body>
-    
+  <div class="cursor"></div>
+
   <app-root></app-root>
 
+  <script>
+    setTimeout(() => {
+      const $hoverables = document.querySelectorAll('.hoverable');
+      console.log($hoverables);
+      for (let i = 0; i < $hoverables.length; i++) {
+        // if (window.CP.shouldStopExecution(0)) break;
+        $hoverables[i].addEventListener('mouseenter', onMouseHover);
+        $hoverables[i].addEventListener('mouseleave', onMouseHoverOut);
+      }
+
+      function onMouseHover() {
+          cursor.classList.toggle("cursor-inc-size");
+      }
+
+      function onMouseHoverOut() {
+        cursor.classList.toggle("cursor-inc-size");
+      }
+    }, 1000)
+     
+
+    const cursor = document.querySelector('.cursor');
+
+    document.addEventListener('mousemove', e => {
+        cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;")
+    })
+    
+  </script>
 </body>
 </html>

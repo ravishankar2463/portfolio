@@ -60,7 +60,7 @@
 }
 
 #about-front .content .connect:hover{
-    transform: scale(1.05);
+    transform: scale(1.05) rotate(-1deg);
 }
 
 #about-front .content .connect:hover::after{

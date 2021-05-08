@@ -15,7 +15,8 @@
 
 html {
     /* This defines what 1rem is */
-    font-size: 62.5%;  /* 1 rem = 10px; 10px/16px = 62.5% */ 
+    font-size: 62.5%;  /* 1 rem = 10px; 10px/16px = 62.5% */
+    scroll-behavior: smooth; 
     
 }
 
@@ -49,4 +50,55 @@ body {
         font-size: 1em;
         border-radius: 1em;
     }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.cursor {
+    width: 20px;
+    height: 20px;
+    background-color: #f7f8fa;
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    z-index: 1000000000;
+    mix-blend-mode: difference;
+    transition: transform 0.2s linear;
+}
+
+.cursor-inc-size {
+    
+    transform: scale(2.5);
+}
+
+body {
+    cursor: none;
+}
+
+@media (max-width: 768px) {
+  .cursor{
+      display: none;
+  }
 }
