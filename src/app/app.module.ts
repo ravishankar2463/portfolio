@@ -7,6 +7,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingComponent } from './sections/landing/landing.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { AboutComponent } from './sections/about/about.component';
+import { SkillsComponent } from './sections/skills/skills.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 export function playerFactory() {
   return player;
@@ -16,12 +19,15 @@ export function playerFactory() {
   declarations: [
     AppComponent,
     LandingComponent,
-    NavbarComponent
+    NavbarComponent,
+    AboutComponent,
+    SkillsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LottieModule.forRoot({ player: playerFactory })
+    LottieModule.forRoot({ player: playerFactory }),
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

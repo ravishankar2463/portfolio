@@ -1,0 +1,301 @@
+#about{
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+
+
+
+
+
+#about-front{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+#about-front .row > *{
+    pointer-events: all;
+}
+
+#about-front .content{
+    font-size: 2em;
+    width: 60ch;
+    padding: 3em 3em;
+    border-radius: 0.3em;
+    text-align: justify;
+    background-color: white;
+    margin: 0;
+    z-index: -2;
+}
+
+#about-front .content .connect{
+    --transition: 0.2s;
+    margin-left: 0.3em;
+    display: inline-block;
+    line-height: 0.85;
+    position: relative;
+    transition: var(--transition);
+}
+
+#about-front .content .connect::after{
+    content: '';
+    position: absolute;
+    height: 120%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-bottom: 2px solid rgb(180, 180, 180);
+    z-index: -1;
+    transition: var(--transition);
+    transform: scale(1.02);
+}
+
+#about-front .content .connect:hover{
+    transform: scale(1.05);
+}
+
+#about-front .content .connect:hover::after{
+    transform: scaleX(1.05);
+}
+
+#about-front .animation{
+    height: 35em;
+    width: 35em;
+    position: relative;
+}
+
+#about-front .animation::after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 0px 8px rgb(199, 199, 199);
+
+    background-color: beige;
+    border-radius: 1em;
+    transform: skewX(-1.5deg) skewY(-1deg);
+    z-index: -1;
+}
+
+
+
+#about-front .heading{
+    font-size: 5em;
+    padding: 0.2em;
+    border-radius: 0.2em;
+    max-width: fit-content;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    position: relative;
+}
+
+#about-front .heading::after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-radius: 0.2em;
+    box-shadow: 2px 2px 8px black;
+
+    background-color: rgb(147 207 239 / 94%);
+    box-shadow: 0px 0px 4px rgb(199, 199, 199);
+    z-index: -1;
+}
+
+@media (max-width: 1024px) {
+    #about-front .animation{
+        height: 30em;
+        width: 30em;
+    }
+
+    #about-front .content{
+        font-size: 1.4em;
+        padding: 2em 1em;
+    }
+}
+
+@media (max-width: 992px) {
+    #about{
+        height: 110vw;
+    }
+
+    #about-front .content{
+        margin-top: 3em;
+    }
+
+    #about-front .heading{
+        margin-bottom: 1em;
+    }
+}
+
+@media (max-width: 768px) {
+    #about{
+        height: 120vw;
+    }
+
+    #about-front .animation{
+        height: 25em;
+        width: 25em;
+    }
+}
+
+@media (max-width: 640px) {
+    #about{
+        height: 100vh;
+    }
+
+    #about-front .heading {
+        font-size: 3em;
+        margin-top: 7vh;
+        margin-bottom: 0em;
+    }
+
+    #about-front .animation{
+        height: 14em;
+        margin-top: 5em;
+    }
+
+    #about-front .animation::after{
+        transform: translateX(20%) translateY(-5%) skewX(-1.5deg) skewY(-1deg);
+        width: 70%;
+        height: 110%;
+    }
+
+    #about-front .content{
+        margin-top: 5em;
+        width: 45ch;
+        font-size: 1em;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#hexagon-hover-background{
+    overflow: hidden;
+}
+
+.hexagon-container{
+    position: relative;
+    overflow: hidden;
+    animation: animate 4s linear infinite;
+    background-color: black;
+}
+
+.hexagon-row{
+    display: inline-flex;
+    margin-top: -3.2em;
+    margin-left: -5em;
+}
+
+.hexagon-row:nth-child(even){
+    margin-left: 1px;
+}
+
+
+.hexagon{
+    position: relative;
+    width: 10em;
+    height: 11em;
+    background-color: #111;
+    margin: 3.5px 2px 2px 2px;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    transition: background-color 2s;
+}
+
+
+
+.last-row-hexagons{
+    clip-path: polygon(50% 0%, 100% 25%, 0 25%);
+}
+
+.hexagon:hover{
+    transition: background-color 0s;
+    background-color: #0f0;
+}
+
+.hexagon::after{
+    content: '';
+    position: absolute;
+    top: 0.4em;
+    bottom: 0.4em;
+    left: 0.4em;
+    right: 0.4em;
+    background-color: #111;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    z-index: 1;
+}
+
+.hexagon::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    pointer-events: none;
+    background: rgba(255, 255, 255, 0.02);
+    z-index: 2;
+}
+
+@keyframes animate {
+    0%{
+        filter: hue-rotate(0deg);
+    }
+
+    100%{
+        filter: hue-rotate(360deg);
+    }
+}

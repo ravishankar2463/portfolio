@@ -1,0 +1,59 @@
+#skills{
+    font-size: 1.5em;
+    overflow: hidden;
+    background-color: #191919;
+}
+
+#skills .heading p{
+    letter-spacing: 0.2em;
+    text-align: center;
+    font-size: 1.2em;
+    word-spacing: 1em;
+    border-bottom: 0.1em solid rgb(180, 180, 180);
+}
+
+
+#skills .card{
+    min-width: 13em;
+    max-width: 17em;
+    height: 18em;
+    transform-origin: 50% 0%;
+    transition: transform 0.3s ease-out;
+}
+
+#skills .card:hover{
+    transform: scale(1.1);
+}
+
+#skills .card img{
+    width: 30%;
+    height: 30%;
+    align-self: center;
+}
+
+#skills .card .card-title{
+    display:inline-block;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    font-size: 1em;
+    border-bottom: 0.1em solid rgb(180, 180, 180);
+    margin-bottom: 2em;
+}
+
+#skills .grid{
+    justify-content: center;
+}
+
+
+
+#magic .btn{
+    font-size: 1em;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+@media (max-width: 640px) {
+  #magic{
+      display: none !important;
+  }
+}
