@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AnimationOptions } from 'ngx-lottie';
+import { AnimationItem } from 'lottie-web';
 
 @Component({
   selector: 'app-skills',
@@ -11,12 +13,12 @@ export class SkillsComponent implements OnInit {
 
   gridColumns:number = 4;
   skillsArray = [
+                  {'title':'Angular',
+                    'description' : "This is the description for Angular"},
                   {'title':'Python',
                     'description' : "This is the description for python"},
                   {'title':'Java',
                     'description' : "This is the description for Java"},
-                  {'title':'Angular',
-                    'description' : "This is the description for Angular"},
                   {'title':'Html',
                     'description' : "This is the description for HTML"},
                   {'title':'Css',
@@ -69,6 +71,15 @@ export class SkillsComponent implements OnInit {
 
     var style = document.getElementById('global-styles');
     style.innerHTML = globalStyles;
+  }
+
+  options: AnimationOptions = {
+    path: 'assets/49862-shooting-star.json',
+  };
+
+  animationCreated(animationItem: AnimationItem): void {
+    animationItem.setSpeed(0.5);
+    console.log(animationItem);
   }
 
 }

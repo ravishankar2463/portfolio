@@ -26,7 +26,9 @@ export function playerFactory() {
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LottieModule.forRoot({ player: playerFactory }),
+    LottieModule.forRoot({ 
+                          player: playerFactory,
+                          useCache: true, }),
     FlexLayoutModule
   ],
   providers: [],

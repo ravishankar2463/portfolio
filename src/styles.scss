@@ -102,3 +102,20 @@ body {
       display: none;
   }
 }
+
+.text-light-red{
+    color: #f39189;
+}
+
+.text-dark-red{
+    color: #cd505a;
+}
+
+@media (min-width: 640px) {
+    .text-md-justify {
+        text-align: justify !important;
+    }
+}
+
+
+

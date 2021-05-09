@@ -15,17 +15,25 @@
     transform: scale(1.1) rotate(45deg);
 }
 
+@media (max-width: 1024px) {
+  .arrow {
+    display: none;
+  }
+}
+
+
 
 #landing {
     position: relative;
     font-size: 1.3rem;
     width: auto;
     height: 100vh;
+    mix-blend-mode: color;
+    background-color: rgb(255 255 255 / 1%);
 }
 
 #landing a{
     text-decoration: none;
-    // cursor: none;
 }
 
 

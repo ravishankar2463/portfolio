@@ -1,7 +1,28 @@
 #skills{
     font-size: 1.5em;
     overflow: hidden;
-    background-color: #191919;
+    // background-color: #191919;
+    position: relative;
+}
+
+#skills .animation{
+    position: absolute;
+    width: 100%;
+    z-index: -12;
+}
+
+@media (max-width: 640px) {
+  #skills .animation {
+    //   transform-origin: center;
+    top:19.5%;
+    transform-origin: center;
+    transform: rotate(84deg) scale(9);
+    // transform: scaleY(10) ;
+  }
+}
+
+#skills .heading{
+    margin-top: 5em;
 }
 
 #skills .heading p{
@@ -48,8 +69,8 @@
 
 #magic .btn{
     font-size: 1em;
-    margin-top: 1.5em;
-    margin-bottom: 1.5em;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 @media (max-width: 640px) {

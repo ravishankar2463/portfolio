@@ -237,17 +237,17 @@
         <div class="container-fluid">    
             <div class="row d-flex justify-content-evenly align-items-center flex-column flex-lg-row">
                 <div class="col-12 col-md-5 animation hoverable">
-                    <ng-lottie [options]="options"></ng-lottie>
+                    <ng-lottie [options]="options" (animationCreated)="animationCreated($event)"></ng-lottie>
                 </div>
                 
-                <div class="col-12 col-md-5 content">
+                <div class="col-12 col-md-5 content text-center text-md-justify">
                     <p>
-                        My name is Ravi Shankar, I'm a Software developer from India. My goal is to create meaningful experiences that generate value for users and businesses.
+                        My name is Ravi Shankar, <span class="d-block d-sm-inline">I'm a Software developer from India. </span> <span class="d-block d-sm-inline mt-3 mt-sm-0">My goal is to create meaningful experiences that generate value for users and businesses.</span> 
                     </p>
                     <p>
                         I'm always open to learning about new technologies, methods & ideas.
                     </p>
-                    <p class="mb-0 mt-4 p-0" style="color: #cd505a;">
+                    <p *ngIf="currentlyOpenToJobs" class="mb-0 mt-4 p-0 text-dark-red">
                         Currently open to jobs
                     </p>
                     <p>
