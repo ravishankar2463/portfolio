@@ -64,11 +64,11 @@
     box-shadow: 5px 10px 18px #888888;
     transform: skewX(1deg) rotate(-0.5deg);
     animation: fade-in 2s ease;
-    transition: transform 0.2s linear;
+    transition: transform 0.2s ease-in-out;
 }
 
 #landing .content:hover{
-    transform: skewX(1deg) rotate(-1.5deg) scale(1.1);
+    transform: skewX(1deg) rotate(-1deg) scale(1.1);
 }
 
 #landing .content h1{
@@ -82,13 +82,13 @@
 }
 
 #landing .animation{
-    --anim: all 0.2s ease-in-out;
+    --anim: transform 0.1s ease-in-out;
     position: relative;
     width: 50%;
     height: auto;
     margin-bottom: 5em;
     transform: rotate(2deg);
-    transition: transform 0.2s linear;
+    transition: transform 0.1s linear;
 }
 
 #landing .animation:hover{

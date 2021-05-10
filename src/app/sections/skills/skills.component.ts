@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,NgZone } from '@angular/core';
 import { AnimationOptions } from 'ngx-lottie';
 import { AnimationItem } from 'lottie-web';
 
@@ -9,7 +9,9 @@ import { AnimationItem } from 'lottie-web';
 })
 export class SkillsComponent implements OnInit {
 
-  constructor() { }
+  private animationItem: AnimationItem;
+
+  constructor(private ngZone: NgZone) {}
 
   gridColumns:number = 4;
   skillsArray = [
@@ -78,8 +80,17 @@ export class SkillsComponent implements OnInit {
   };
 
   animationCreated(animationItem: AnimationItem): void {
-    animationItem.setSpeed(0.5);
+    this.animationItem = animationItem;
+    this.animationItem.setSpeed(0.5);
     console.log(animationItem);
+  }
+
+  stop(): void {
+    this.ngZone.runOutsideAngular(() => this.animationItem.stop());
+  }
+
+  play(): void {
+    this.ngZone.runOutsideAngular(() => this.animationItem.play());
   }
 
 }

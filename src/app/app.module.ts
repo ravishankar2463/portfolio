@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {LottieModule} from 'ngx-lottie';
-import player from 'lottie-web';
+import player from 'lottie-web/build/player/lottie_light';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +10,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { AboutComponent } from './sections/about/about.component';
 import { SkillsComponent } from './sections/skills/skills.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ContactComponent } from './sections/contact/contact.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 export function playerFactory() {
   return player;
@@ -21,7 +23,9 @@ export function playerFactory() {
     LandingComponent,
     NavbarComponent,
     AboutComponent,
-    SkillsComponent
+    SkillsComponent,
+    ContactComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

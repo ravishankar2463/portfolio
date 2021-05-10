@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
 import { AnimationOptions } from 'ngx-lottie';
 import { AnimationItem } from 'lottie-web';
 
@@ -10,7 +10,9 @@ import { AnimationItem } from 'lottie-web';
 export class AboutComponent implements OnInit {
   currentlyOpenToJobs:boolean = false;
 
-  constructor() { }
+  constructor(private ngZone: NgZone) {}
+
+  private animationItem: AnimationItem;
 
   ngOnInit(): void {
   }
@@ -20,8 +22,17 @@ export class AboutComponent implements OnInit {
   };
 
   animationCreated(animationItem: AnimationItem): void {
-    animationItem.setSpeed(0.6);
+    this.animationItem = animationItem;
+    this.animationItem.setSpeed(0.6);
     console.log(animationItem);
+  }
+
+  stop(): void {
+    this.ngZone.runOutsideAngular(() => this.animationItem.stop());
+  }
+
+  play(): void {
+    this.ngZone.runOutsideAngular(() => this.animationItem.play());
   }
 
 }

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-// import { AnimationItem } from 'lottie-web';
+import { Component, OnInit, NgZone } from '@angular/core';
+import { AnimationItem } from 'lottie-web';
 import { AnimationOptions } from 'ngx-lottie';
 
 @Component({
@@ -9,7 +9,9 @@ import { AnimationOptions } from 'ngx-lottie';
 })
 export class LandingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ngZone: NgZone) {}
+
+  private animationItem: AnimationItem;
 
   ngOnInit(): void {
   }
@@ -18,8 +20,16 @@ export class LandingComponent implements OnInit {
     path: 'assets/56922-code-typing-concept.json',
   };
  
-  // animationCreated(animationItem: AnimationItem): void {
-  //   console.log(animationItem);
-  // }
+  animationCreated(animationItem: AnimationItem): void {
+    this.animationItem = animationItem;
+  }
+
+  stop(): void {
+    this.ngZone.runOutsideAngular(() => this.animationItem.stop());
+  }
+
+  play(): void {
+    this.ngZone.runOutsideAngular(() => this.animationItem.play());
+  }
 
 }
