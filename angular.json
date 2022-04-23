@@ -32,7 +32,8 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "node_modules/vanilla-tilt/dist/vanilla-tilt.min.js"
+              "node_modules/vanilla-tilt/dist/vanilla-tilt.min.js",
+              "node_modules/mdb-ui-kit/js/mdb.min.js"
             ]
           },
           "configurations": {
@@ -99,7 +100,8 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "node_modules/vanilla-tilt/dist/vanilla-tilt.min.js"
+              "node_modules/vanilla-tilt/dist/vanilla-tilt.min.js",
+              "node_modules/mdb-ui-kit/js/mdb.min.js"
             ]
           }
         },
