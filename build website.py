@@ -35,7 +35,6 @@ def replaceLocalHostStringInFile(File):
         cnt = 1
         while line:
             if(line.__contains__("http://localhost")):
-                print("Line {}: {}".format(cnt, line.strip()))
                 lines.append(line.replace("http://localhost",getReplaceString(File.relativeFilePath)))
             line = fp.readline()
             lines.append(line)
