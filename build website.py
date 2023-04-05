@@ -22,7 +22,10 @@ def registerAllFilesInDirectory(fullPath,relPath,fileList):
 
 def getReplaceString(relativeFilePath):
     slashCount = relativeFilePath.count("\\")
-    return "."*(slashCount+1)
+    if(slashCount == 0):
+        return "./"
+    else:
+        return "../"*(slashCount)
 
 
 def replaceLocalHostStringInFile(File):
@@ -34,8 +37,8 @@ def replaceLocalHostStringInFile(File):
         lines.append(line);
         cnt = 1
         while line:
-            if(line.__contains__("http://localhost")):
-                lines.append(line.replace("http://localhost",getReplaceString(File.relativeFilePath)))
+            if(line.__contains__("http://localhost/")):
+                lines.append(line.replace("http://localhost/",getReplaceString(File.relativeFilePath)))
             line = fp.readline()
             lines.append(line)
             cnt += 1
