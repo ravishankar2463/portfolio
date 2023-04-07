@@ -37,10 +37,8 @@ def replaceLocalHostStringInFile(File):
         lines.append(line);
         cnt = 1
         while line:
-            if(line.__contains__("http://localhost/")):
-                lines.append(line.replace("http://localhost/",getReplaceString(File.relativeFilePath)))
+            lines.append(line.replace("http://localhost/",getReplaceString(File.relativeFilePath)))
             line = fp.readline()
-            lines.append(line)
             cnt += 1
     
     file = open(File.fullFilePath,"r+",encoding="UTF-8"); 
