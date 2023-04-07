@@ -3,6 +3,7 @@ import re
 
 buildDirectory = os.path.abspath( os.path.dirname( __file__ ) ) + "\dist";
 filePattern = "^.*\.(css|js|html)$";
+menuItem = "menu-item";
 
 class File:
     def __init__(self, fileName, relativeFilePath, fullFilePath):
@@ -26,6 +27,15 @@ def getReplaceString(relativeFilePath):
         return "./"
     else:
         return "../"*(slashCount)
+    
+
+def replaceHrefInLink(line):
+    hrefIndex = line.find("href=");
+    if(hrefIndex != -1):
+        quoteIndex = hrefIndex+6 + line[hrefIndex+6:].find("\"")
+        lineBeforeHref = line[0:hrefIndex+6]
+        lineAfterHref = line[quoteIndex:]
+        return (lineBeforeHref + line[hrefIndex+6:quoteIndex] + "index.html" + lineAfterHref);
 
 
 def replaceLocalHostStringInFile(File):
@@ -37,6 +47,8 @@ def replaceLocalHostStringInFile(File):
         lines.append(line);
         cnt = 1
         while line:
+            if(File.fileName.endswith(".html") and menuItem in line and "li id=" in line):
+                line = replaceHrefInLink(line);
             lines.append(line.replace("http://localhost/",getReplaceString(File.relativeFilePath)))
             line = fp.readline()
             cnt += 1
@@ -44,6 +56,7 @@ def replaceLocalHostStringInFile(File):
     file = open(File.fullFilePath,"r+",encoding="UTF-8"); 
     file.truncate(0)
     file.writelines(lines)
+    file.write("\n")
     file.close();
 
  
