@@ -1,0 +1,24 @@
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+
+
+<div
+    class="elementor-element elementor-element-0ddca93 elementor-widget elementor-widget-elementskit-lottie"
+    data-id="0ddca93"
+    data-element_type="widget"
+    data-widget_type="elementskit-lottie.default"
+  >
+    <div class="elementor-widget-container">
+      <div class="ekit-wid-con">
+        <lottie-player
+          src="./codeTyping.json"
+          class="ekit_lottie"
+          background="transparent"
+          speed="1"
+          loop
+          autoplay
+        ></lottie-player>
+      </div>
+    </div>
+  </div>
+</div>
