@@ -31,11 +31,13 @@ def getReplaceString(relativeFilePath):
 
 def replaceHrefInLink(line):
     hrefIndex = line.find("href=");
-    if(hrefIndex != -1):
+    if(hrefIndex != -1 and "index.html" not in line):
         quoteIndex = hrefIndex+6 + line[hrefIndex+6:].find("\"")
         lineBeforeHref = line[0:hrefIndex+6]
         lineAfterHref = line[quoteIndex:]
-        return (lineBeforeHref + line[hrefIndex+6:quoteIndex] + "index.html" + lineAfterHref);
+        return (lineBeforeHref + line[hrefIndex+6:quoteIndex] + "index.html" + lineAfterHref)
+    else:
+        return line
 
 
 def replaceLocalHostStringInFile(File):
